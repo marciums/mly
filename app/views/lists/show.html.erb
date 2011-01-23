@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>List name:</b>
+  <%= @list.name %> <%= link_to 'Edit', edit_list_path(@list) %> 
+</p>
+<% @list.todos.each do |todo| %>
+  <p><b>Todo description:</b>
+    <%= todo.description %>
+	<%= link_to 'Edit', edit_list_todo_path(@list, todo) %>
+  </p>
+
+<% end %>
+<p><b>Add a todo:</b></p>
+<%= form_for([@list, @list.todos.build]) do |f| %>
+  <div class="field" style="margin-left:10px">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  	<div class="actions">
+    	<%= f.submit %>
+  	</div>
+  </div>
+<% end %>
+
+<%= link_to 'Back to all lists', lists_path %>
