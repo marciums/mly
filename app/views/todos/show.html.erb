@@ -5,5 +5,5 @@
 </div>
 
 
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+<%= link_to 'Edit', edit_list_todo_path(@todo.list, @todo) %> |
+<%= link_to 'Back', @todo.list %>

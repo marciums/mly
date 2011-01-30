@@ -11,9 +11,9 @@
 <% @todos.each do |todo| %>
   <tr>
     <td><%= todo.description %></td>
-    <td><%= link_to 'Show', todo %></td>
-    <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-    <td><%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!-- td><link_to 'Show', todo></td -->
+    <td><%= link_to 'Edit', edit_list_todo_path(todo.list, todo) %></td>
+    <td><%= link_to 'Destroy', [todo.list, todo], :confirm => 'Are you sure?', :method => :delete%></td>
   </tr>
 <% end %>
 </table>
