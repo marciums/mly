@@ -63,3 +63,11 @@ table {
 
 /* end of CSS reset */
 
+body { background:#e8e8e8; }
+
+.list { padding:12px; }
+
+.todos { background:#ffffff; }
+.todos .todo { margin:4px 0; padding:4px; }
+.todos .todo.selected { box-shadow:0 0 10px #ffbf0f; -moz-box-shadow:0 0 10px #ffbf0f; -webkit-box-shadow:0 0 10px #ffbf0f; }
+.todos .todo .description {}
