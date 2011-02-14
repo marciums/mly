@@ -24,10 +24,10 @@ $(window).keydown(function(e) {
         // e.ctrlKey
         break;
     case 74: // j
-        $('.todo.selected').removeClass('selected').prev('.todo').andSelf().slice(0,1).addClass('selected');
+        $('.todo.selected').removeClass('selected').next('.todo').andSelf().slice(0,1).addClass('selected');
         break;
     case 75: // k
-        $('.todo.selected').removeClass('selected').next('.todo').andSelf().slice(0,1).addClass('selected');
+        $('.todo.selected').removeClass('selected').prev('.todo').andSelf().slice(0,1).addClass('selected');
         break;
     }
     log('down:' + e.which)
@@ -38,6 +38,6 @@ $(window).mousewheel(function(e) {
 });
 
 $(document).ready(function() {
-    
+
 });
 

@@ -1,0 +1,4 @@
+<%= div_for list do %>
+	<%= list.name %> | <%= link_to 'Show', list %> | <%= link_to 'Delete', list, :confirm => 'Are you sure?', :method => :delete %>
+
+<% end %>

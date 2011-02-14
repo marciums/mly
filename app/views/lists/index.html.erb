@@ -1,22 +1,16 @@
 <h1>Listing lists</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= render 'form' %>
 
-<% @lists.each do |list| %>
-  <tr>
-	<td><%= list.name %></td>
-    <td><%= link_to 'Show', list %></td>
-    <td><%= link_to 'Delete', list, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="lists">
+	<%= render @lists %> 
+</div>
 
-<br />
+<div style="padding-top: 50px">
+</div>
 
-<%= link_to 'New List', new_list_path %>
+
+
+
+
+

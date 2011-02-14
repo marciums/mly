@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   # GET /lists.xml
   def index
     @lists = List.all
+    @list = List.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,16 +42,17 @@ class ListsController < ApplicationController
   # POST /lists.xml
   def create
     @list = List.new(params[:list])
-
     respond_to do |format|
       if @list.save
-        format.html { redirect_to(@list, :notice => 'List was successfully created.') }
-        format.xml  { render :xml => @list, :status => :created, :location => @list }
+        flash[:notice] = "List successfully created"
+        format.js
+        format.html { redirect_to(@list) }
+        
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @list.errors, :status => :unprocessable_entity }
+        format.html { render :action => "new", :layout => !request.xhr? }
+        format.js
       end
-    end
+     end
   end
 
   # PUT /lists/1
@@ -62,9 +64,11 @@ class ListsController < ApplicationController
       if @list.update_attributes(params[:list])
         format.html { redirect_to(@list, :notice => 'List was successfully updated.') }
         format.xml  { head :ok }
+        format.js
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @list.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end

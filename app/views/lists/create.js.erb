@@ -1,0 +1,15 @@
+// from http://blog.bernatfarrero.com/jquery-and-rails-3-mini-tutorial/
+
+/* Show notice */
+var notice = $("#list-notice").find(".flash.notice");
+notice.html('<%= escape_javascript(flash.delete(:notice)) %>');
+notice.fadeIn('slow').delay(800).fadeOut("slow");
+
+/* Append new list to list of lists. list. */
+$("#lists").prepend("<%= escape_javascript(render(@list)) %>");
+
+/* Highlight the new list */
+//$("#list_<%= @list.id %>").effect("highlight", {}, 1500);
+
+/* Reset the list form */
+$("#new_list")[0].reset();

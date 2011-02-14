@@ -71,3 +71,16 @@ body { background:#e8e8e8; }
 .todos .todo { margin:4px 0; padding:4px; }
 .todos .todo.selected { box-shadow:0 0 10px #ffbf0f; -moz-box-shadow:0 0 10px #ffbf0f; -webkit-box-shadow:0 0 10px #ffbf0f; }
 .todos .todo .description {}
+
+div.flash.notice
+{
+  display: block;
+  padding: 10px;
+  border: 1px solid #3A991A;
+  background-color: #ABD7A4;
+  margin: 20px 10px;
+  color: #000000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}

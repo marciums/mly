@@ -1,4 +1,9 @@
-<%= form_for(@list) do |f| %>
+<div id="list-notice" style="height: 50px; padding:10px">
+	<div class="flash notice" style="display:none">
+	</div>
+</div>
+
+<%= form_for(@list, :remote => true) do |f| %>
   <% if @list.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
@@ -18,3 +23,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

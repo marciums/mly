@@ -7,6 +7,7 @@
 <div class="todos">
   <%= render @list.todos %>
 </div>
+
 <p><b>Add a todo:</b></p>
 <%= form_for([@list, @list.todos.build]) do |f| %>
   <div class="field" style="margin-left:10px">
